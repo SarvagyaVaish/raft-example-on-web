@@ -33,10 +33,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 #
 # Usage:
 #
-# Build the image using:
-#   docker build -t raft-web-backend .
-#
-# Run the container
-#   Add "-it" to interact with the container
-#   The "-v" mounts the host's relative "./data" directory to the absolute "/data" location
-#   docker run --rm --platform linux/amd64 -v ./data:/data raft-example
+# docker build -t raft-web-backend .
+# docker run --rm -p 8080:8080 raft-web-backend
+# docker tag raft-web-backend us-central1-docker.pkg.dev/raft-example/raft-repo/raft-web-backend:dev
+# docker push us-central1-docker.pkg.dev/raft-example/raft-repo/raft-web-backend:dev

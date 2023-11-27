@@ -58,14 +58,3 @@ async def upload(
 
     # Return the image as a streaming response
     return StreamingResponse(io.BytesIO(flow_img_bytes), media_type="image/png")
-
-
-# @app.get("/get_image")
-# def get_image():
-#     return FileResponse("frame_2.png")
-
-#     image = cv2.imread("frame_1.png")
-#     image_bytes = cv2.imencode(".png", image)[1].tobytes()
-
-#     # Return the image as a streaming response
-#     return StreamingResponse(io.BytesIO(image_bytes), media_type="image/png")
