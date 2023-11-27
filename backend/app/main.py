@@ -12,17 +12,17 @@ from app.raft_utils import RAFTArgs, inference
 app = FastAPI()
 
 # Middleware: https://fastapi.tiangolo.com/tutorial/cors/
-# origins = [
-#     "http://localhost",
-#     "http://localhost:5173",  # Default webapp port
-# ]
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+origins = [
+    "http://localhost",
+    "http://localhost:5173",  # Default webapp port
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -31,7 +31,7 @@ def read_root():
 
 
 @app.post("/process")
-async def upload(
+async def process(
     first_image: UploadFile = File(...),
     second_image: UploadFile = File(...),
 ):
