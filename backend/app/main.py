@@ -15,6 +15,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:5173",  # Default webapp port
+    "https://raft-web-frontend-wnch5tzs6q-uc.a.run.app",
 ]
 app.add_middleware(
     CORSMiddleware,

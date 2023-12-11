@@ -32,6 +32,8 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 #
 # Usage:
+#   - Install gcloud
+#   - Configure Docker permissions: gcloud auth configure-docker us-central1-docker.pkg.dev
 #
 # docker build -t raft-web-backend .
 # docker run --rm -p 8080:8080 raft-web-backend
